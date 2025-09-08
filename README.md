@@ -1,4 +1,4 @@
-# WordPress Escalável na AWS
+<h1 align="center" >WordPress Escalável na AWS </h1>
 <p align="center">
   <img src="https://logo.svgcdn.com/l/aws.svg" alt="AWS Logo" width="300">
 </p>
@@ -93,7 +93,9 @@ Para aprimorar o monitoramento, podemos integrar o CloudWatch de forma mais robu
    - Dashboards: Desenvolver dashboards no CloudWatch para visualizar as métricas mais importantes de forma consolidada, facilitando a identificação de gargalos e problemas.
    - Alarmes: Configurar alarmes no CloudWatch para notificar a equipe responsável quando métricas importantes atingirem limites pré-definidos (por exemplo, alta utilização de CPU, baixo espaço em disco no EFS, ou latência elevada do banco de dados).
    - Monitoramento do ALB: Acompanhar métricas do Application Load Balancer, como Latency, Request Count e HTTP Code (4xx, 5xx), para entender o tráfego e identificar possíveis problemas na entrega da aplicação.
+
 Essas implementações de monitoramento permitirão uma visibilidade muito maior sobre o desempenho e a saúde da sua aplicação WordPress, garantindo uma resposta proativa a quaisquer anomalias.
+
 
 
 
