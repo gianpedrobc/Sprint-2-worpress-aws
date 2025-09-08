@@ -9,12 +9,12 @@ Este projeto descreve uma infraestrutura robusta e escalável para hospedar Word
 
 ---
 
-## 🌐 Diagrama da Arquitetura
-
+<h1 align="center" >🌐 Diagrama da Arquitetura </h1>
+<p
 ![Diagrama da Arquitetura](documents/worpress.drawio)
+</p>
 
-
-### ⚙️ Camadas Principais
+<h1 align="center" > ⚙️ Camadas Principais </h1>
 
 1. **Rede (VPC)**
    - VPC personalizada com 2 subnets públicas (ALB) e 4 privadas (EC2/RDS)
@@ -37,20 +37,57 @@ Este projeto descreve uma infraestrutura robusta e escalável para hospedar Word
 
 ---
 
-## 📑 tabela de serviços 
+<h1 align="center" > 📑 tabela de serviços  </h1>
 
-| Categoria      | Serviço AWS                              | Função                                          |
-| -------------- | ---------------------------------------- | ----------------------------------------------- |
-| Rede           | VPC, Subnets, IGW, NAT Gateway           | Isolamento e roteamento seguro                  |
-| Computação     | EC2, Auto Scaling Group, Launch Template | Escalabilidade automática da aplicação          |
-| Balanceamento  | Application Load Balancer                | Distribuição de tráfego                         |
-| Armazenamento  | Amazon EFS                               | Persistência de arquivos compartilhados         |
-| Banco de Dados | RDS (MySQL)                              | Persistência confiável com alta disponibilidade |
-| Segurança      | Security Groups                          | Controle de acesso às instâncias e banco        |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th>Categoria</th>
+      <th>Serviço AWS</th>
+      <th>Função</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rede</td>
+      <td>VPC, Subnets, IGW, NAT Gateway</td>
+      <td>Isolamento e roteamento seguro</td>
+    </tr>
+    <tr>
+      <td>Computação</td>
+      <td>EC2, Auto Scaling Group, Launch Template</td>
+      <td>Escalabilidade automática da aplicação</td>
+    </tr>
+    <tr>
+      <td>Balanceamento</td>
+      <td>Application Load Balancer</td>
+      <td>Distribuição de tráfego</td>
+    </tr>
+    <tr>
+      <td>Armazenamento</td>
+      <td>Amazon EFS</td>
+      <td>Persistência de arquivos compartilhados</td>
+    </tr>
+    <tr>
+      <td>Banco de Dados</td>
+      <td>RDS (MySQL)</td>
+      <td>Persistência confiável com alta disponibilidade</td>
+    </tr>
+    <tr>
+      <td>Segurança</td>
+      <td>Security Groups</td>
+      <td>Controle de acesso às instâncias e banco</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 ---
 
-## 🔧 trecho do User data 
+<h1 align="center" > 🔧 trecho do User data </h1>
 ```
 set -e 
 
@@ -84,7 +121,7 @@ services:
 ```
 
 
-## 📊 Monitoramento com CloudWatch
+<h1 align="center" > 📊 Monitoramento com CloudWatch </h1>
 Para aprimorar o monitoramento, podemos integrar o CloudWatch de forma mais robusta. Além das métricas padrão de instâncias EC2 e RDS, é altamente recomendado:
    ![imagem do CloudWatch](documents/)
 
@@ -95,6 +132,7 @@ Para aprimorar o monitoramento, podemos integrar o CloudWatch de forma mais robu
    - Monitoramento do ALB: Acompanhar métricas do Application Load Balancer, como Latency, Request Count e HTTP Code (4xx, 5xx), para entender o tráfego e identificar possíveis problemas na entrega da aplicação.
 
 Essas implementações de monitoramento permitirão uma visibilidade muito maior sobre o desempenho e a saúde da sua aplicação WordPress, garantindo uma resposta proativa a quaisquer anomalias.
+
 
 
 
