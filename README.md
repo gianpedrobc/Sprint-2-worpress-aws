@@ -1,8 +1,9 @@
 # WordPress Escalável na AWS
-![AWS Logo](https://logo.svgcdn.com/l/aws.svg)
+<p align="center">
+  <img src="https://logo.svgcdn.com/l/aws.svg" alt="AWS Logo" width="120">
+</p>
 
-
-
+---
 
 Este projeto descreve uma infraestrutura robusta e escalável para hospedar WordPress de forma containerizada na AWS, utilizando scripts de User Data. A arquitetura implementada emprega Auto Scaling Group, Application Load Balancer, Amazon EFS e RDS, assegurando alta disponibilidade e performance para ambientes de produção, com monitoramento integrado via CloudWatch.
 
@@ -93,6 +94,7 @@ Para aprimorar o monitoramento, podemos integrar o CloudWatch de forma mais robu
    - Alarmes: Configurar alarmes no CloudWatch para notificar a equipe responsável quando métricas importantes atingirem limites pré-definidos (por exemplo, alta utilização de CPU, baixo espaço em disco no EFS, ou latência elevada do banco de dados).
    - Monitoramento do ALB: Acompanhar métricas do Application Load Balancer, como Latency, Request Count e HTTP Code (4xx, 5xx), para entender o tráfego e identificar possíveis problemas na entrega da aplicação.
 Essas implementações de monitoramento permitirão uma visibilidade muito maior sobre o desempenho e a saúde da sua aplicação WordPress, garantindo uma resposta proativa a quaisquer anomalias.
+
 
 
 
