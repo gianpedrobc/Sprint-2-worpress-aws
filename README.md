@@ -10,11 +10,11 @@ Este projeto descreve uma infraestrutura robusta e escalável para hospedar Word
 ---
 
 <h1 align="center" >🌐 Diagrama da Arquitetura </h1>
-<p
-![Diagrama da Arquitetura](documents/worpress.drawio)
-</p>
 
-<h1 align="center" > ⚙️ Camadas Principais </h1>
+![Diagrama da Arquitetura](documents/worpress.drawio)
+
+
+ ##⚙️ Camadas Principais </h1>
 
 1. **Rede (VPC)**
    - VPC personalizada com 2 subnets públicas (ALB) e 4 privadas (EC2/RDS)
@@ -88,6 +88,7 @@ Este projeto descreve uma infraestrutura robusta e escalável para hospedar Word
 ---
 
 <h1 align="center" > 🔧 trecho do User data </h1>
+
 ```
 set -e 
 
@@ -119,7 +120,7 @@ services:
       - /var/www/html/wp-content:/var/www/html 
 
 ```
-
+---
 
 <h1 align="center" > 📊 Monitoramento com CloudWatch </h1>
 Para aprimorar o monitoramento, podemos integrar o CloudWatch de forma mais robusta. Além das métricas padrão de instâncias EC2 e RDS, é altamente recomendado:
@@ -132,6 +133,7 @@ Para aprimorar o monitoramento, podemos integrar o CloudWatch de forma mais robu
    - Monitoramento do ALB: Acompanhar métricas do Application Load Balancer, como Latency, Request Count e HTTP Code (4xx, 5xx), para entender o tráfego e identificar possíveis problemas na entrega da aplicação.
 
 Essas implementações de monitoramento permitirão uma visibilidade muito maior sobre o desempenho e a saúde da sua aplicação WordPress, garantindo uma resposta proativa a quaisquer anomalias.
+
 
 
 
