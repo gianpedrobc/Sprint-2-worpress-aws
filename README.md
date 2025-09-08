@@ -49,7 +49,7 @@ A arquitetura utiliza **Auto Scaling Group**, **Application Load Balancer**, **A
 
 ---
 
-## 🔧 trevho do User data 
+## 🔧 trecho do User data 
 ```
 set -e 
 
@@ -84,3 +84,4 @@ services:
 
 
 ## monitoramento 
+
