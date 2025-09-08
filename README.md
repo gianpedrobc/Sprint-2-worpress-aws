@@ -2,9 +2,7 @@
 ![Logo AWS](https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png)
 
 
-Este projeto provisiona uma infraestrutura **robusta e escalável** para hospedar WordPress **containerizado** na AWS ", utilizando "**Infraestrutura como Código (IaC)** com Terraform" e scripts de User Data."
-
-A arquitetura utiliza **Auto Scaling Group**, **Application Load Balancer**, **Amazon EFS** e **RDS**, garantindo alta disponibilidade e performance para ambientes de produção.
+Este projeto descreve uma infraestrutura robusta e escalável para hospedar WordPress de forma containerizada na AWS, utilizando scripts de User Data. A arquitetura implementada emprega Auto Scaling Group, Application Load Balancer, Amazon EFS e RDS, assegurando alta disponibilidade e performance para ambientes de produção, com monitoramento integrado via CloudWatch.
 
 ---
 
@@ -30,9 +28,9 @@ A arquitetura utiliza **Auto Scaling Group**, **Application Load Balancer**, **A
    - Armazena uploads, plugins e temas do WordPress
 
 4. **Banco de Dados**
-   - Amazon RDS Multi-AZ (MySQL ou MariaDB)
-   - Acesso restrito apenas às instâncias EC2
-   - Backup automático e failover
+   - Utiliza Amazon RDS (MySQL) para o gerenciamento do banco de dados.
+   - O acesso ao banco de dados é restrito, permitindo conexões apenas das instâncias EC2 da aplicação.
+   - A configuração do RDS inclui backup automático e opções de failover para alta disponibilidade
 
 ---
 
@@ -44,7 +42,7 @@ A arquitetura utiliza **Auto Scaling Group**, **Application Load Balancer**, **A
 | Computação     | EC2, Auto Scaling Group, Launch Template | Escalabilidade automática da aplicação          |
 | Balanceamento  | Application Load Balancer                | Distribuição de tráfego e health checks         |
 | Armazenamento  | Amazon EFS                               | Persistência de arquivos compartilhados         |
-| Banco de Dados | RDS Multi-AZ (MySQL/MariaDB)             | Persistência confiável com alta disponibilidade |
+| Banco de Dados | RDS (MySQL)                              | Persistência confiável com alta disponibilidade |
 | Segurança      | Security Groups                          | Controle de acesso às instâncias e banco        |
 
 ---
@@ -83,5 +81,19 @@ services:
 ```
 
 
-## monitoramento 
+## 📊 Monitoramento com CloudWatch
+Para aprimorar o monitoramento, podemos integrar o CloudWatch de forma mais robusta. Além das métricas padrão de instâncias EC2 e RDS, é altamente recomendado:
+
+   - Logs do Container: Configurar o Docker para enviar logs do container do WordPress para o CloudWatch Logs. Isso permitirá centralizar e analisar os logs da aplicação em tempo real.
+
+   - Métricas Personalizadas: Criar métricas personalizadas para monitorar a saúde específica do WordPress, como o tempo de resposta das requisições, o número de erros 5xx, ou métricas de performance do EFS.
+
+   - Dashboards: Desenvolver dashboards no CloudWatch para visualizar as métricas mais importantes de forma consolidada, facilitando a identificação de gargalos e problemas.
+
+   - Alarmes: Configurar alarmes no CloudWatch para notificar a equipe responsável quando métricas importantes atingirem limites pré-definidos (por exemplo, alta utilização de CPU, baixo espaço em disco no EFS, ou latência elevada do banco de dados).
+
+   - Monitoramento do ALB: Acompanhar métricas do Application Load Balancer, como Latency, Request Count e HTTP Code (4xx, 5xx), para entender o tráfego e identificar possíveis problemas na entrega da aplicação.
+
+Essas implementações de monitoramento permitirão uma visibilidade muito maior sobre o desempenho e a saúde da sua aplicação WordPress, garantindo uma resposta proativa a quaisquer anomalias.
+
 
