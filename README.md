@@ -1,5 +1,5 @@
 # WordPress Escalável na AWS
-![Logo AWS](https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png)
+![Logo AWS](https://d1.awsstatic.com/logos/aws-logo/PNG/AWS-Logo_Squid_ink.png)
 
 
 Este projeto descreve uma infraestrutura robusta e escalável para hospedar WordPress de forma containerizada na AWS, utilizando scripts de User Data. A arquitetura implementada emprega Auto Scaling Group, Application Load Balancer, Amazon EFS e RDS, assegurando alta disponibilidade e performance para ambientes de produção, com monitoramento integrado via CloudWatch.
@@ -13,15 +13,15 @@ Este projeto descreve uma infraestrutura robusta e escalável para hospedar Word
 
 ### ⚙️ Camadas Principais
 
-1. **Rede (VPC Layer)**
+1. **Rede (VPC)**
    - VPC personalizada com 2 subnets públicas (ALB) e 4 privadas (EC2/RDS)
    - Internet Gateway (IGW) e NAT Gateway
    - Route Tables configuradas para roteamento correto
 
 2. **Camada de Aplicação (Compute Layer)**
-   - EC2 em Auto Scaling Group com Launch Template
-   - Script User Data: instala WordPress, monta EFS e conecta ao RDS
-   - Associado a Application Load Balancer (ALB) com Health Check
+   - EC2 instances gerenciadas por um Auto Scaling Group, com um Launch Template definindo a configuração inicial.
+   - O script de User Data é responsável por instalar o WordPress, montar o Amazon EFS e estabelecer a conexão com o RDS.
+   - A camada de aplicação está associada a um Application Load Balancer (ALB) 
 
 3. **Camada de Armazenamento**
    - Amazon EFS montado em todas as instâncias EC2
@@ -40,7 +40,7 @@ Este projeto descreve uma infraestrutura robusta e escalável para hospedar Word
 | -------------- | ---------------------------------------- | ----------------------------------------------- |
 | Rede           | VPC, Subnets, IGW, NAT Gateway           | Isolamento e roteamento seguro                  |
 | Computação     | EC2, Auto Scaling Group, Launch Template | Escalabilidade automática da aplicação          |
-| Balanceamento  | Application Load Balancer                | Distribuição de tráfego e health checks         |
+| Balanceamento  | Application Load Balancer                | Distribuição de tráfego                         |
 | Armazenamento  | Amazon EFS                               | Persistência de arquivos compartilhados         |
 | Banco de Dados | RDS (MySQL)                              | Persistência confiável com alta disponibilidade |
 | Segurança      | Security Groups                          | Controle de acesso às instâncias e banco        |
@@ -83,17 +83,15 @@ services:
 
 ## 📊 Monitoramento com CloudWatch
 Para aprimorar o monitoramento, podemos integrar o CloudWatch de forma mais robusta. Além das métricas padrão de instâncias EC2 e RDS, é altamente recomendado:
+   ![imagem do CloudWatch](documents/)
 
    - Logs do Container: Configurar o Docker para enviar logs do container do WordPress para o CloudWatch Logs. Isso permitirá centralizar e analisar os logs da aplicação em tempo real.
-
    - Métricas Personalizadas: Criar métricas personalizadas para monitorar a saúde específica do WordPress, como o tempo de resposta das requisições, o número de erros 5xx, ou métricas de performance do EFS.
-
    - Dashboards: Desenvolver dashboards no CloudWatch para visualizar as métricas mais importantes de forma consolidada, facilitando a identificação de gargalos e problemas.
-
    - Alarmes: Configurar alarmes no CloudWatch para notificar a equipe responsável quando métricas importantes atingirem limites pré-definidos (por exemplo, alta utilização de CPU, baixo espaço em disco no EFS, ou latência elevada do banco de dados).
-
    - Monitoramento do ALB: Acompanhar métricas do Application Load Balancer, como Latency, Request Count e HTTP Code (4xx, 5xx), para entender o tráfego e identificar possíveis problemas na entrega da aplicação.
-
 Essas implementações de monitoramento permitirão uma visibilidade muito maior sobre o desempenho e a saúde da sua aplicação WordPress, garantindo uma resposta proativa a quaisquer anomalias.
+
+
 
 
