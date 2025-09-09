@@ -1,6 +1,6 @@
 <h1 align="center" >WordPress Escalável na AWS </h1>
 <p align="center">
-  <img src="https://alexjunio.com.br/wp-content/uploads/2022/07/hospedagem-wordpress-amazon-aws-alexjunio.jpg" alt="AWS Logo" width="300">
+  <img src="https://alexjunio.com.br/wp-content/uploads/2022/07/hospedagem-wordpress-amazon-aws-alexjunio.jpg" alt="AWS Logo" width="500">
 </p>
 
 ---
@@ -133,6 +133,7 @@ Para aprimorar o monitoramento, podemos integrar o CloudWatch de forma mais robu
    - Monitoramento do ALB: Acompanhar métricas do Application Load Balancer, como Latency, Request Count e HTTP Code (4xx, 5xx), para entender o tráfego e identificar possíveis problemas na entrega da aplicação.
 
 Essas implementações de monitoramento permitirão uma visibilidade muito maior sobre o desempenho e a saúde da sua aplicação WordPress, garantindo uma resposta proativa a quaisquer anomalias.
+
 
 
 
