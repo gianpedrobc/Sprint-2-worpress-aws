@@ -11,7 +11,7 @@ Este projeto descreve uma infraestrutura robusta e escalável para hospedar Word
 
 <h1 align="center" >🌐 Diagrama da Arquitetura </h1>
 
-![Diagrama da Arquitetura](documents/worpress.drawio)
+![Diagrama da Arquitetura](documents/wordpress.jpg)
 
 
  <h1 align="center" > ⚙️ Camadas Principais </h1>
@@ -133,6 +133,7 @@ Para aprimorar o monitoramento, podemos integrar o CloudWatch de forma mais robu
    - Monitoramento do ALB: Acompanhar métricas do Application Load Balancer, como Latency, Request Count e HTTP Code (4xx, 5xx), para entender o tráfego e identificar possíveis problemas na entrega da aplicação.
 
 Essas implementações de monitoramento permitirão uma visibilidade muito maior sobre o desempenho e a saúde da sua aplicação WordPress, garantindo uma resposta proativa a quaisquer anomalias.
+
 
 
 
