@@ -185,11 +185,12 @@ Visão geral do monitoramento e alarmes configurados.
 <h1 align="center"> 💰 Estimativa de Custos (Estudo) </h1>
 
 Este projeto foi realizado com foco em **aprendizado** e uso dos recursos em ambiente de estudo.  
-Os valores abaixo são apenas **estimativas aproximadas** com base em uso mínimo (instâncias pequenas, poucas horas de execução e sem considerar descontos ou créditos da AWS Free Tier).
+Os valores abaixo são apenas **estimativas aproximadas** com base em uso mínimo (instâncias pequenas, poucas horas de execução e uso da AWS Free Tier).
 
 
 
 ![Estimativa de Custos](https://github.com/gianpedrobc/Sprint-2-worpress-aws/blob/main/documents/custos-print.jpg)
+
 
 
 
