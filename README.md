@@ -140,48 +140,6 @@ services:
 ```
 ---
 
-<h1 align="center" > 📊 Monitoramento com CloudWatch </h1>
-
-**Objetivo:**
-Monitorar a CPU das instâncias EC2 do grupo `wordpress-as` e ajustar automaticamente a quantidade de instâncias.
-
-**Passos:**
-
-**Acessar CloudWatch:**  
-- Console AWS → CloudWatch → Alarms → Create alarm  
-
-**Selecionar Métrica:**  
-- EC2 → Per-Instance Metrics → CPUUtilization → selecionar instâncias do grupo `wordpress-as`  
-
-**Definir Condição:**  
-- Tipo: Static  
-- Condição: CPUUtilization > 50%  
-- Período: 5 min  
-- Evaluation periods: 2  
-
-**Configurar Ação (Auto Scaling):**  
-- Add Auto Scaling action → Auto Scaling group: `wordpress-as`  
-- Scale Out: +1 instância quando CPU >= 50%  
-- Scale In: -1 instância quando CPU < 20%
-
----
-
-<h1 align="center"> 🔹 Métricas CloudWatch </h1>
-
-Monitoramento de CPU e ajuste automático do Auto Scaling.  
-
-![CloudWatch Métricas](https://github.com/gianpedrobc/Sprint-2-worpress-aws/blob/main/documents/metricas-claudwhatch-print.jpg)
-
----
-
-<h1 align="center"> 🔹 Painel CloudWatch </h1>
-
-Visão geral do monitoramento e alarmes configurados.  
-
-![CloudWatch Painel](https://github.com/gianpedrobc/Sprint-2-worpress-aws/blob/main/documents/painel-claud-print.jpg)
-
----
-
 <h1 align="center"> 💰 Estimativa de Custos (Estudo) </h1>
 
 Este projeto foi realizado com foco em **aprendizado** e uso dos recursos em ambiente de estudo.  
@@ -190,6 +148,7 @@ Os valores abaixo são apenas **estimativas aproximadas** com base em uso mínim
 
 
 ![Estimativa de Custos](https://github.com/gianpedrobc/Sprint-2-worpress-aws/blob/main/documents/custos-print.jpg)
+
 
 
 
