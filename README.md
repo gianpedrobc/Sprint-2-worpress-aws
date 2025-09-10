@@ -87,15 +87,15 @@ Este projeto descreve uma infraestrutura robusta e escalável para hospedar Word
 
 ---
 
-## 📷 Prints do Projeto
+<h1 align="center" >  📷 Prints do Projeto </h1>
 
-### 🔹 EFS
+<h1 align="center" >🔹 EFS </h1>
 Sistema de arquivos elástico para armazenamento compartilhado.  
 ![EFS](https://github.com/gianpedrobc/Sprint-2-worpress-aws/blob/main/documents/efs-print.jpg)
 
 ---
 
-### 🔹 RDS
+<h1 align="center" >🔹 RDS </h1>
 Banco de dados MySQL gerenciado para o WordPress.  
 ![RDS](https://github.com/gianpedrobc/Sprint-2-worpress-aws/blob/main/documents/rds-print.jpg)
 
@@ -158,15 +158,16 @@ services:
 - Scale Out: +1 instância quando CPU > 50%  
 - Scale In: -1 instância quando CPU < 20%
 
-### 🔹 Métricas CloudWatch
+<h1 align="center" > 🔹 Métricas CloudWatch </h1>
 Monitoramento de CPU e ajuste automático do Auto Scaling.  
 ![CloudWatch Métricas](https://github.com/gianpedrobc/Sprint-2-worpress-aws/blob/main/documents/metricas-claudwhatch-print.jpg)
 
 ---
 
-### 🔹 Painel CloudWatch
+<h1 align="center" >🔹 Painel CloudWatch </h1>
 Visão geral do monitoramento e alarmes configurados.  
 ![CloudWatch Painel](https://github.com/gianpedrobc/Sprint-2-worpress-aws/blob/main/documents/painel-claud-print.jpg)
+
 
 
 
