@@ -141,10 +141,11 @@ services:
 ---
 
 <h1 align="center" > 📊 Monitoramento com CloudWatch </h1>
-##Objetivo:
+
+**Objetivo:**
 Monitorar a CPU das instâncias EC2 do grupo `wordpress-as` e ajustar automaticamente a quantidade de instâncias.
 
-##Passos:
+**Passos:**
 
 **Acessar CloudWatch:**  
 - Console AWS → CloudWatch → Alarms → Create alarm  
@@ -178,6 +179,7 @@ Monitoramento de CPU e ajuste automático do Auto Scaling.
 Visão geral do monitoramento e alarmes configurados.  
 
 ![CloudWatch Painel](https://github.com/gianpedrobc/Sprint-2-worpress-aws/blob/main/documents/painel-claud-print.jpg)
+
 
 
 
