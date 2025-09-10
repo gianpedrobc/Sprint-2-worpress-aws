@@ -21,7 +21,7 @@ Este projeto descreve uma infraestrutura robusta e escalável para hospedar Word
    - Internet Gateway (IGW) e NAT Gateway
    - Route Tables configuradas para roteamento correto
 
-2. **Camada de Aplicação (Compute Layer)**
+2. **Camada de Aplicação (Computação)**
    - EC2 instances gerenciadas por um Auto Scaling Group, com um Launch Template definindo a configuração inicial.
    - O script de User Data é responsável por instalar o WordPress, montar o Amazon EFS e estabelecer a conexão com o RDS.
    - A camada de aplicação está associada a um Application Load Balancer (ALB) 
@@ -141,7 +141,8 @@ services:
 ---
 
 <h1 align="center" > 📊 Monitoramento com CloudWatch </h1>
-**Objetivo:** Monitorar a CPU das instâncias EC2 do grupo `wordpress-as` e ajustar automaticamente a quantidade de instâncias.
+**Objetivo:**
+Monitorar a CPU das instâncias EC2 do grupo `wordpress-as` e ajustar automaticamente a quantidade de instâncias.
 
 **Passos:**
 
@@ -159,7 +160,7 @@ services:
 
 **Configurar Ação (Auto Scaling):**  
 - Add Auto Scaling action → Auto Scaling group: `wordpress-as`  
-- Scale Out: +1 instância quando CPU > 50%  
+- Scale Out: +1 instância quando CPU >= 50%  
 - Scale In: -1 instância quando CPU < 20%
 
 ---
@@ -177,6 +178,7 @@ Monitoramento de CPU e ajuste automático do Auto Scaling.
 Visão geral do monitoramento e alarmes configurados.  
 
 ![CloudWatch Painel](https://github.com/gianpedrobc/Sprint-2-worpress-aws/blob/main/documents/painel-claud-print.jpg)
+
 
 
 
