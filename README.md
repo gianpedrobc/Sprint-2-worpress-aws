@@ -123,16 +123,41 @@ services:
 ---
 
 <h1 align="center" > 📊 Monitoramento com CloudWatch </h1>
-Para aprimorar o monitoramento, podemos integrar o CloudWatch de forma mais robusta. Além das métricas padrão de instâncias EC2 e RDS, é altamente recomendado:
-   ![imagem do CloudWatch](documents/)
+Objetivo:
+Monitorar a CPU das instâncias EC2 do grupo wordpress-as e ajustar automaticamente a quantidade de instâncias.
 
-   - Logs do Container: Configurar o Docker para enviar logs do container do WordPress para o CloudWatch Logs. Isso permitirá centralizar e analisar os logs da aplicação em tempo real.
-   - Métricas Personalizadas: Criar métricas personalizadas para monitorar a saúde específica do WordPress, como o tempo de resposta das requisições, o número de erros 5xx, ou métricas de performance do EFS.
-   - Dashboards: Desenvolver dashboards no CloudWatch para visualizar as métricas mais importantes de forma consolidada, facilitando a identificação de gargalos e problemas.
-   - Alarmes: Configurar alarmes no CloudWatch para notificar a equipe responsável quando métricas importantes atingirem limites pré-definidos (por exemplo, alta utilização de CPU, baixo espaço em disco no EFS, ou latência elevada do banco de dados).
-   - Monitoramento do ALB: Acompanhar métricas do Application Load Balancer, como Latency, Request Count e HTTP Code (4xx, 5xx), para entender o tráfego e identificar possíveis problemas na entrega da aplicação.
+Passos
 
-Essas implementações de monitoramento permitirão uma visibilidade muito maior sobre o desempenho e a saúde da sua aplicação WordPress, garantindo uma resposta proativa a quaisquer anomalias.
+Acessar CloudWatch
+Console AWS → CloudWatch → Alarms → Create alarm
+
+Selecionar Métrica
+EC2 → Per-Instance Metrics → CPUUtilization → selecionar instâncias do grupo wordpress-as
+
+Definir Condição
+
+Tipo: Static
+
+Condição: CPUUtilization > 50%
+
+Período: 5 min
+
+Evaluation periods: 2
+
+Configurar Ação
+
+Add Auto Scaling action → Auto Scaling group: wordpress-as → Scale Out: +1 instância
+
+Scale In (opcional)
+
+CPUUtilization < 20% → Scale In: -1 instância
+
+Criar Alarme
+
+Nome: wordpress-as-cpu-high (Scale Out) / wordpress-as-cpu-low (Scale In)
+
+Revisar e criar
+
 
 
 
