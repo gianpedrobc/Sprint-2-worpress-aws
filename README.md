@@ -126,18 +126,20 @@ services:
 Objetivo:
 Monitorar a CPU das instâncias EC2 do grupo wordpress-as e ajustar automaticamente a quantidade de instâncias.
 Passos
-Acessar CloudWatch
+**Acessar CloudWatch:**
    - Console AWS → CloudWatch → Alarms → Create alarm
-Selecionar Métrica
+**Selecionar Métrica:**
    - EC2 → Per-Instance Metrics → CPUUtilization → selecionar instâncias do grupo wordpress-as
-Definir Condição
+**Definir Condição:**
    - Tipo: Static
    - Condição: CPUUtilization > 50%
    - Período: 5 min
    - Evaluation periods: 2
-   - Configurar Ação
+   - Configurar Ação (Auto Scaling)
    - Add Auto Scaling action → Auto Scaling group: wordpress-as
    - CPUUtilization < 20% → Scale In: -1 instância
+   - Scale Out: +1 instância quando CPU > 50%
+   - Scale In: -1 instância quando CPU < 20%
 
 
 
